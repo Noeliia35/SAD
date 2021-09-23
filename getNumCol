@@ -1,0 +1,28 @@
+package ejemplos;
+
+import  java.io.*;
+        
+public class getNumCol {
+    
+    public static void printResults(Process process) throws IOException{
+        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+        String line = "";
+        System.out.println("Numero de columnas de la consola");
+        while((line=reader.readLine())!= null){ //Sigue hasta que llega al final de la Stream
+            
+            System.out.println(line);
+        }
+    }
+    
+    public static void main(String[] args){
+        try{
+            String[] cmdline = {"bash", "-c", "tput cols 2> /dev/tty"};
+            Process process = Runtime.getRuntime().exec(cmdline); //Creo un proceso
+            printResults(process);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+    }
+    
+}
