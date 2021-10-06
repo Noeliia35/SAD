@@ -13,7 +13,7 @@ public class Console implements Observer{
 
     @Override
     public void update(Observable observable, Object obj) {
-        //sobresciurem el metode update
+        //Sobreescribimos el metodo update
         String[] action = (String[]) obj;
 
         if ("true".equals(action[0])) {
