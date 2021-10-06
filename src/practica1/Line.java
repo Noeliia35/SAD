@@ -96,7 +96,7 @@ public class Line extends Observable{
         int posFin = this.getLength() - this.posCursor;
         this.posCursor = this.getLength();
         action[0] = "true";
-        action[1] = Key.END1 + posFin + Key.END2; // In this case we pass the number to move
+        action[1] = Key.END1 + posFin + Key.END2; // In this case I pass the number to move
         this.setChanged();
         this.notifyObservers(action);
     }
